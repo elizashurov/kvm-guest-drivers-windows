@@ -158,6 +158,9 @@
         xcopy /y /q $(OutDir)$(ProjectName)\netkvm.sys $(InstallRoot)\$(TargetOS)\$(TargetArch)\
         xcopy /y /q $(OutDir)$(ProjectName)\netkvmp.exe $(InstallRoot)\$(TargetOS)\$(TargetArch)\
         xcopy /y /q $(OutDir)$(ProjectName)\netkvmp.pdb $(InstallRoot)\$(TargetOS)\$(TargetArch)\
+        xcopy /y /q $(ProjectDir)NotifyObject\vioprot.inf $(InstallRoot)\$(TargetOS)\$(TargetArch)\
+        xcopy /y /q $(ProjectDir)NotifyObject\InstallProtocol.cmd $(InstallRoot)\$(TargetOS)\$(TargetArch)\
+        xcopy /y /q $(ProjectDir)NotifyObject\UninstallProtocol.cmd $(InstallRoot)\$(TargetOS)\$(TargetArch)\
         xcopy /y /q $(ProjectDir)CoInstaller\$(ConfigurationName)\$(PlatformTarget)\netkvmco.exe $(InstallRoot)\$(TargetOS)\$(TargetArch)\
         xcopy /y /q $(ProjectDir)CoInstaller\$(ConfigurationName)\$(PlatformTarget)\netkvmco.pdb $(InstallRoot)\$(TargetOS)\$(TargetArch)\
         xcopy /y /q $(ProjectDir)Documentation\readme.md $(InstallRoot)\$(TargetOS)\$(TargetArch)\
@@ -229,6 +232,9 @@
     <FilesToPackage Include="@(Inf->'%(CopyOutput)')" Condition="'@(Inf)'!=''" />
     <FilesToPackage Include="ProtocolService\$(PlatformTarget)\$(ConfigurationName)\netkvmp.exe" />
     <FilesToPackage Include="ProtocolService\$(PlatformTarget)\$(ConfigurationName)\netkvmp.pdb" />
+    <FilesToPackage Include="NotifyObject\vioprot.inf" />
+    <FilesToPackage Include="NotifyObject\InstallProtocol.cmd" />
+    <FilesToPackage Include="NotifyObject\UninstallProtocol.cmd" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\DebugData.h" />
