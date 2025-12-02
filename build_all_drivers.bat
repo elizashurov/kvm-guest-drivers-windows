@@ -1,9 +1,9 @@
 @echo off
 
-if "%VIRTIO_WIN_NO_ARM%"=="" call build\build.bat virtio-win.sln "Win10 Win11" ARM64
+if "%VIRTIO_WIN_NO_ARM%"=="" call build\build.bat virtio-win.sln "Win11" ARM64
 if errorlevel 1 goto :fail
 
-call build\build.bat virtio-win.sln "Win10 Win11" %*
+call build\build.bat virtio-win.sln "Win11" %*
 if errorlevel 1 goto :fail
 
 path %path%;C:\Program Files (x86)\Windows Kits\10\bin\x86\

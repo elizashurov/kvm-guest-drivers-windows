@@ -1,43 +1,43 @@
 @echo off
 
-call build\build.bat NetKVM\NetKVM-VS2015.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat NetKVM\NetKVM-VS2015.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat vioscsi\vioscsi.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat vioscsi\vioscsi.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat viostor\viostor.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat viostor\viostor.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
 if "%VIRTIO_WIN_SDV_2022%"=="" goto :nosdv2022
-call build\build.bat Balloon\sys\balloon.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat Balloon\sys\balloon.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat fwcfg64\fwcfg.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat fwcfg64\fwcfg.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat ivshmem\ivshmem.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat ivshmem\ivshmem.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat pvpanic\pvpanic\pvpanic.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat pvpanic\pvpanic\pvpanic.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat viorng\viorng\viorng.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat viorng\viorng\viorng.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat vioserial\sys\vioser.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat vioserial\sys\vioser.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat viosock\sys\viosock.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat viosock\sys\viosock.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat viosock\wsk\wsk.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat viosock\wsk\wsk.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat viosock\viosock-wsk-test\viosock-wsk-test.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat viosock\viosock-wsk-test\viosock-wsk-test.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat viofs\pci\viofs.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat viofs\pci\viofs.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat vioinput\hidpassthrough\hidpassthrough.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat vioinput\hidpassthrough\hidpassthrough.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat vioinput\sys\vioinput.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat vioinput\sys\vioinput.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-call build\build.bat viomem\sys\viomem.vcxproj "Win10_SDV Win11_SDV" %*
+call build\build.bat viomem\sys\viomem.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
 
 :nosdv2022
 
 echo.
-echo Processing DVL files to create Windows 10 COMPAT ^(WIN10_RS1 ^/ 1607^) version...
+echo Processing DVL files to create Windows 11 COMPAT version...
 for /R %%f in (*.dvl.xml) do @(
   call :process_xml %%f
 )
