@@ -318,7 +318,7 @@ if ERRORLEVEL 1 (
 )
 
 IF "%CODEQL_FAILED%" NEQ "1" (
-  call %CODEQL_BIN% database analyze %~dp1codeql_db %CODEQL_DRIVER_SUITES%\windows_driver_recommended.qls --format=sarifv2.1.0 --output=%~dp1%BUILD_NAME%.sarif -j 0
+  call %CODEQL_BIN% database analyze %~dp1codeql_db %CODEQL_DRIVER_SUITES%\windows-driver-suites\recommended.qls --format=sarifv2.1.0 --output=%~dp1%BUILD_NAME%.sarif -j 0
   if ERRORLEVEL 1 (
     set CODEQL_FAILED=1
   )
