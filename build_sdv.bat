@@ -6,7 +6,6 @@ call build\build.bat vioscsi\vioscsi.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
 call build\build.bat viostor\viostor.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
-if "%VIRTIO_WIN_SDV_2022%"=="" goto :nosdv2022
 call build\build.bat Balloon\sys\balloon.vcxproj "Win11_SDV" %*
 if errorlevel 1 goto :fail
 call build\build.bat fwcfg64\fwcfg.vcxproj "Win11_SDV" %*
