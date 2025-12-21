@@ -302,6 +302,12 @@ goto :eof
 
 :run_ql
 
+rem --- TESTING: FORCE FAILURE START ---
+echo TESTING: Simulating CodeQL failure...
+set CODEQL_FAILED=1
+goto :eof
+rem --- TESTING: FORCE FAILURE END ---
+
 if exist %~dp1codeql_db (
   echo CodeQL ^: Removing previously created rules database...
   rmdir /s /q %~dp1codeql_db
